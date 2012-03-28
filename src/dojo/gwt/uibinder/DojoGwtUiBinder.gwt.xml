@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="dojo_gwt_uibinder">
+
+	<!-- Modules GWT -->
+	<inherits name="com.google.gwt.user.User" />
+
+	<!-- Thème appliqué -->
+	<inherits name="com.google.gwt.user.theme.clean.Clean" />
+
+	<!-- Point d"entrée de l"application -->
+	<entry-point class="dojo.gwt.uibinder.client.Dojo_gwt_uibinder" />
+
+	<!-- Package(s) dont le code sera retranscrit en JavaScript -->
+	<source path="client" />
+	<source path="shared" />
+
+</module>
