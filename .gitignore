@@ -1,0 +1,7 @@
+/.gwt
+/.settings
+/gwt-unitCache
+/war/dojo_gwt_uibinder/
+/war/WEB-INF/classes
+/war/WEB-INF/deploy
+/war/WEB-INF/lib
