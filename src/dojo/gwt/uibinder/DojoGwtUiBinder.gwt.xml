@@ -8,7 +8,7 @@
 	<inherits name="com.google.gwt.user.theme.clean.Clean" />
 
 	<!-- Point d"entrée de l"application -->
-	<entry-point class="dojo.gwt.uibinder.client.Dojo_gwt_uibinder" />
+	<entry-point class="dojo.gwt.uibinder.client.EntryPoint" />
 
 	<!-- Package(s) dont le code sera retranscrit en JavaScript -->
 	<source path="client" />
