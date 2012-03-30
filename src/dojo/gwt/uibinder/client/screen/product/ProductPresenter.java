@@ -31,13 +31,13 @@ public class ProductPresenter {
 	}
 
 	private void displayDetailsOf(Product product) {
-		view.getNameField().setValue(product.getName());
-		view.getRateField().setValue(stringOf(product.getRate()));
-		view.getDescriptionField().setValue(product.getDescription());
-		view.getColorField().setValue(product.getAlcohol());
-		view.getBreweryField().setValue(product.getBrewery());
-		view.getTypeField().setValue(product.getType());
-		view.getAlcoholField().setValue(product.getAlcohol());
+		view.getNameField().setText(product.getName());
+		view.getRateField().setText(stringOf(product.getRate()));
+		view.getDescriptionField().setText(product.getDescription());
+		view.getColorField().setText(product.getAlcohol());
+		view.getBreweryField().setText(product.getBrewery());
+		view.getTypeField().setText(product.getType());
+		view.getAlcoholField().setText(product.getAlcohol());
 	}
 
 	private void displayCommentsOf(Product product) {

@@ -1,7 +1,7 @@
 package dojo.gwt.uibinder.client.screen.product;
 
 import com.google.gwt.resources.client.ImageResource;
-import com.google.gwt.user.client.ui.HasValue;
+import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.IsWidget;
 
 import dojo.gwt.uibinder.client.model.Rate;
@@ -12,19 +12,19 @@ public interface ProductView extends IsWidget {
 
 	void displayPicture(ImageResource picture);
 
-	HasValue<String> getAlcoholField();
+	HasText getAlcoholField();
 
-	HasValue<String> getBreweryField();
+	HasText getBreweryField();
 
-	HasValue<String> getColorField();
+	HasText getColorField();
 
-	HasValue<String> getDescriptionField();
+	HasText getDescriptionField();
 
-	HasValue<String> getNameField();
+	HasText getNameField();
 
-	HasValue<String> getRateField();
+	HasText getRateField();
 
-	HasValue<String> getTypeField();
+	HasText getTypeField();
 
 	void addComment(String authorName, String text, String rate);
 
