@@ -9,7 +9,7 @@ public interface ProductView extends IsWidget {
 
 	static final double MAX_RATE = 10.0;
 
-	void displayPicture(ImageResource picture);
+	void displayPicture(ImageResource resource);
 
 	HasText getAlcoholField();
 

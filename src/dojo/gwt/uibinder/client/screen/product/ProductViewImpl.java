@@ -2,60 +2,168 @@ package dojo.gwt.uibinder.client.screen.product;
 
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.TakesValue;
+import com.google.gwt.user.client.ui.DisclosurePanel;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasText;
+import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.NumberLabel;
-import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.Panel;
+import com.google.gwt.user.client.ui.Widget;
 
 public class ProductViewImpl extends FlowPanel implements ProductView {
 
-	private static final HasText INVISIBLE_TEXT_FIELD = new TextBox();
-	private static final TakesValue<Number> INVISIBLE_NUMBER_FIELD = new NumberLabel<Number>();
+	private Label alcohol;
+	private Label brewery;
+	private Label color;
+	private Label description;
+	private Label name;
+	private Image picture;
+	private NumberLabel<Number> rate;
+	private Label type;
+
+	private Panel commentsPanel;
+
+	public ProductViewImpl() {
+		constructStructure();
+	}
+
+	private void constructStructure() {
+		initializeFields();
+		add(newFirstColumn());
+		add(newSecondColumn());
+	}
+
+	private void initializeFields() {
+		alcohol = new Label();
+		brewery = new Label();
+		color = new Label();
+		description = new Label();
+		name = new Label();
+		picture = new Image();
+		rate = new NumberLabel<Number>();
+		type = new Label();
+
+		commentsPanel = new FlowPanel();
+	}
+
+	private Panel newFirstColumn() {
+		Panel column = new FlowPanel();
+		column.add(picture);
+
+		return column;
+	}
+
+	private Panel newSecondColumn() {
+		Panel column = new FlowPanel();
+		column.add(name);
+		column.add(newRateBlock());
+		column.add(newDescriptionBlock());
+		column.add(newDetailsBlock());
+		column.add(newCommentsBlock());
+
+		return column;
+	}
+
+	private Widget newRateBlock() {
+		FlowPanel block = new FlowPanel();
+		block.add(new Label("Note moyenne :"));
+		block.add(rate);
+
+		return block;
+	}
+
+	private Widget newDescriptionBlock() {
+		return newCollapsibleBlockWith("Description", description);
+	}
+
+	private Widget newDetailsBlock() {
+		FlowPanel group = new FlowPanel();
+		group.add(newDetailLineWith("Couleur", color));
+		group.add(newDetailLineWith("Degré d'alcool", alcohol));
+		group.add(newDetailLineWith("Type", type));
+		group.add(newDetailLineWith("Brasserie", brewery));
+
+		return newCollapsibleBlockWith("Détails", group);
+	}
+
+	private Widget newDetailLineWith(String label, Widget field) {
+		Panel line = new FlowPanel();
+		line.add(new Label(label));
+		line.add(field);
+
+		return line;
+	}
+
+	private Widget newCommentsBlock() {
+		return newCollapsibleBlockWith("Commentaires", commentsPanel);
+	}
+
+	private Widget newCollapsibleBlockWith(String header, Widget content) {
+		DisclosurePanel block = new DisclosurePanel(header);
+		block.setOpen(true);
+		block.add(content);
+
+		return block;
+	}
 
 	@Override
-	public void displayPicture(ImageResource picture) {
-
+	public void displayPicture(ImageResource resource) {
+		picture.setResource(resource);
 	}
 
 	@Override
 	public HasText getAlcoholField() {
-		return INVISIBLE_TEXT_FIELD;
+		return alcohol;
 	}
 
 	@Override
 	public HasText getBreweryField() {
-		return INVISIBLE_TEXT_FIELD;
+		return brewery;
 	}
 
 	@Override
 	public HasText getColorField() {
-		return INVISIBLE_TEXT_FIELD;
+		return color;
 	}
 
 	@Override
 	public HasText getDescriptionField() {
-		return INVISIBLE_TEXT_FIELD;
+		return description;
 	}
 
 	@Override
 	public HasText getNameField() {
-		return INVISIBLE_TEXT_FIELD;
+		return name;
 	}
 
 	@Override
 	public TakesValue<Number> getRateField() {
-		return INVISIBLE_NUMBER_FIELD;
+		return rate;
 	}
 
 	@Override
 	public HasText getTypeField() {
-		return INVISIBLE_TEXT_FIELD;
+		return type;
 	}
 
 	@Override
 	public void addComment(String authorName, String text, double rate) {
-		// TODO Auto-generated method stub
+		commentsPanel.add(newCommentBlockWith(authorName, text, rate));
+	}
 
+	private Widget newCommentBlockWith(String authorName, String text,
+			double rate) {
+
+		NumberLabel<Number> rateLabel = new NumberLabel<Number>();
+		rateLabel.setValue(rate);
+
+		FlowPanel block = new FlowPanel();
+		block.add(new Label(authorName));
+		block.add(rateLabel);
+		block.add(new Label(text));
+
+		return block;
 	}
 
 }
