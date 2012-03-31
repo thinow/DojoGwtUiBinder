@@ -34,7 +34,7 @@ public class ProductPresenter {
 		view.getNameField().setText(product.getName());
 		view.getRateField().setText(stringOf(product.getRate()));
 		view.getDescriptionField().setText(product.getDescription());
-		view.getColorField().setText(product.getAlcohol());
+		view.getColorField().setText(product.getColor());
 		view.getBreweryField().setText(product.getBrewery());
 		view.getTypeField().setText(product.getType());
 		view.getAlcoholField().setText(product.getAlcohol());
