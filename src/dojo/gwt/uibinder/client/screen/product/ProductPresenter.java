@@ -1,18 +1,12 @@
 package dojo.gwt.uibinder.client.screen.product;
 
-import static com.google.gwt.i18n.client.NumberFormat.getFormat;
-
-import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.client.ui.IsWidget;
 
 import dojo.gwt.uibinder.client.model.Comment;
 import dojo.gwt.uibinder.client.model.Product;
-import dojo.gwt.uibinder.client.model.Rate;
 import dojo.gwt.uibinder.client.model.factory.ProductFactory;
 
 public class ProductPresenter {
-
-	private static final NumberFormat RATE_FORMATTER = getFormat("0.0");
 
 	private ProductView view = new ProductViewImpl();
 
@@ -32,7 +26,7 @@ public class ProductPresenter {
 
 	private void displayDetailsOf(Product product) {
 		view.getNameField().setText(product.getName());
-		view.getRateField().setText(stringOf(product.getRate()));
+		view.getRateField().setValue(product.getRate().getValue());
 		view.getDescriptionField().setText(product.getDescription());
 		view.getColorField().setText(product.getColor());
 		view.getBreweryField().setText(product.getBrewery());
@@ -49,13 +43,9 @@ public class ProductPresenter {
 	private void display(Comment comment) {
 		String authorName = comment.getAuthorName();
 		String text = comment.getText();
-		String rate = stringOf(comment.getRate());
+		double rate = comment.getRate().getValue();
 
 		view.addComment(authorName, text, rate);
-	}
-
-	private String stringOf(Rate rate) {
-		return RATE_FORMATTER.format(rate.getValue());
 	}
 
 	public IsWidget getView() {

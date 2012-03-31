@@ -1,14 +1,13 @@
 package dojo.gwt.uibinder.client.screen.product;
 
 import com.google.gwt.resources.client.ImageResource;
+import com.google.gwt.user.client.TakesValue;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.IsWidget;
 
-import dojo.gwt.uibinder.client.model.Rate;
-
 public interface ProductView extends IsWidget {
 
-	static final Rate MAX_RATE = new Rate(10.0);
+	static final double MAX_RATE = 10.0;
 
 	void displayPicture(ImageResource picture);
 
@@ -22,10 +21,10 @@ public interface ProductView extends IsWidget {
 
 	HasText getNameField();
 
-	HasText getRateField();
+	TakesValue<Number> getRateField();
 
 	HasText getTypeField();
 
-	void addComment(String authorName, String text, String rate);
+	void addComment(String authorName, String text, double rate);
 
 }
