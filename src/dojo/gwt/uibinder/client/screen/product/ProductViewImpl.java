@@ -44,6 +44,8 @@ public class ProductViewImpl extends Composite implements ProductView {
 
 	public ProductViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
+
+		maxRate.setValue(MAX_RATE);
 	}
 
 	@Override
