@@ -1,6 +1,7 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:r="urn:import:dojo.gwt.uibinder.client.screen.product.rate">
 
 	<g:HTMLPanel>
 
@@ -16,9 +17,7 @@
 
 			<div>
 				<span>Note moyenne :</span>
-				<g:NumberLabel ui:field="rate" customFormat="0.#" />
-				<span>/</span>
-				<g:NumberLabel ui:field="maxRate" customFormat="0.#" />
+				<r:RateLine ui:field="rateLine" />
 			</div>
 
 			<g:DisclosurePanel open="true">

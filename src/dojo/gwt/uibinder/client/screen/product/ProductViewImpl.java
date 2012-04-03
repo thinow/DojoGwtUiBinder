@@ -9,9 +9,10 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.NumberLabel;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.Widget;
+
+import dojo.gwt.uibinder.client.screen.product.rate.RateLine;
 
 public class ProductViewImpl extends Composite implements ProductView {
 
@@ -25,9 +26,7 @@ public class ProductViewImpl extends Composite implements ProductView {
 	@UiField
 	Label name;
 	@UiField
-	NumberLabel<Number> rate;
-	@UiField
-	NumberLabel<Number> maxRate;
+	RateLine rateLine;
 	@UiField
 	Label description;
 	@UiField
@@ -44,8 +43,6 @@ public class ProductViewImpl extends Composite implements ProductView {
 
 	public ProductViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
-
-		maxRate.setValue(MAX_RATE);
 	}
 
 	@Override
@@ -80,7 +77,7 @@ public class ProductViewImpl extends Composite implements ProductView {
 
 	@Override
 	public TakesValue<Number> getRateField() {
-		return rate;
+		return rateLine.getRate();
 	}
 
 	@Override
