@@ -12,6 +12,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.Widget;
 
+import dojo.gwt.uibinder.client.screen.product.comment.Comment;
 import dojo.gwt.uibinder.client.screen.product.rate.RateLine;
 
 public class ProductViewImpl extends Composite implements ProductView {
@@ -87,8 +88,17 @@ public class ProductViewImpl extends Composite implements ProductView {
 
 	@Override
 	public void addComment(String authorName, String text, double rate) {
-		// TODO Auto-generated method stub
+		commentsPanel.add(commentWith(authorName, text, rate));
+	}
 
+	private Comment commentWith(String authorName, String text, double rate) {
+		Comment comment = new Comment();
+
+		comment.getAuthorName().setText(authorName);
+		comment.getRate().setValue(rate);
+		comment.getText().setText(text);
+
+		return comment;
 	}
 
 }
