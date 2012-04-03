@@ -1,55 +1,70 @@
 package dojo.gwt.uibinder.client.screen.product;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ImageResource;
+import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.TakesValue;
-import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.NumberLabel;
-import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.Widget;
 
-public class ProductViewImpl extends FlowPanel implements ProductView {
+public class ProductViewImpl extends Composite implements ProductView {
 
-	private static final HasText INVISIBLE_TEXT_FIELD = new TextBox();
-	private static final TakesValue<Number> INVISIBLE_NUMBER_FIELD = new NumberLabel<Number>();
+	private static Binder uiBinder = GWT.create(Binder.class);
+
+	interface Binder extends UiBinder<Widget, ProductViewImpl> {
+	}
+
+	public ProductViewImpl() {
+		initWidget(uiBinder.createAndBindUi(this));
+	}
 
 	@Override
 	public void displayPicture(ImageResource picture) {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public HasText getAlcoholField() {
-		return INVISIBLE_TEXT_FIELD;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public HasText getBreweryField() {
-		return INVISIBLE_TEXT_FIELD;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public HasText getColorField() {
-		return INVISIBLE_TEXT_FIELD;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public HasText getDescriptionField() {
-		return INVISIBLE_TEXT_FIELD;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public HasText getNameField() {
-		return INVISIBLE_TEXT_FIELD;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public TakesValue<Number> getRateField() {
-		return INVISIBLE_NUMBER_FIELD;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public HasText getTypeField() {
-		return INVISIBLE_TEXT_FIELD;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
