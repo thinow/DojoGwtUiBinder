@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:dojo.gwt.uibinder.client.screen.product.rate">
+
+	<g:HTMLPanel>
+		<g:Label ui:field="authorName" />
+		<r:RateLine ui:field="rateLine" />
+		<g:Label ui:field="text" />
+	</g:HTMLPanel>
+
+</ui:UiBinder> 
