@@ -3,9 +3,14 @@ package dojo.gwt.uibinder.client.screen.product;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.TakesValue;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
+import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.NumberLabel;
+import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.Widget;
 
 public class ProductViewImpl extends Composite implements ProductView {
@@ -15,56 +20,70 @@ public class ProductViewImpl extends Composite implements ProductView {
 	interface Binder extends UiBinder<Widget, ProductViewImpl> {
 	}
 
+	@UiField
+	Image picture;
+	@UiField
+	Label name;
+	@UiField
+	NumberLabel<Number> rate;
+	@UiField
+	NumberLabel<Number> maxRate;
+	@UiField
+	Label description;
+	@UiField
+	Label color;
+	@UiField
+	Label alcohol;
+	@UiField
+	Label type;
+	@UiField
+	Label brewery;
+
+	@UiField
+	Panel commentsPanel;
+
 	public ProductViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
 	@Override
-	public void displayPicture(ImageResource picture) {
-		// TODO Auto-generated method stub
-
+	public void displayPicture(ImageResource resource) {
+		picture.setResource(resource);
 	}
 
 	@Override
 	public HasText getAlcoholField() {
-		// TODO Auto-generated method stub
-		return null;
+		return alcohol;
 	}
 
 	@Override
 	public HasText getBreweryField() {
-		// TODO Auto-generated method stub
-		return null;
+		return brewery;
 	}
 
 	@Override
 	public HasText getColorField() {
-		// TODO Auto-generated method stub
-		return null;
+		return color;
 	}
 
 	@Override
 	public HasText getDescriptionField() {
-		// TODO Auto-generated method stub
-		return null;
+		return description;
 	}
 
 	@Override
 	public HasText getNameField() {
-		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 	@Override
 	public TakesValue<Number> getRateField() {
-		// TODO Auto-generated method stub
-		return null;
+		return rate;
 	}
 
 	@Override
 	public HasText getTypeField() {
-		// TODO Auto-generated method stub
-		return null;
+		return type;
 	}
 
 	@Override
