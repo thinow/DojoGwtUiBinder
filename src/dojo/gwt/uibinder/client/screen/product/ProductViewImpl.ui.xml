@@ -16,9 +16,9 @@
 
 			<div>
 				<span>Note moyenne :</span>
-				<g:NumberLabel ui:field="rate" />
+				<g:NumberLabel ui:field="rate" customFormat="0.#" />
 				<span>/</span>
-				<g:NumberLabel ui:field="maxRate" />
+				<g:NumberLabel ui:field="maxRate" customFormat="0.#" />
 			</div>
 
 			<g:DisclosurePanel open="true">
