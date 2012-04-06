@@ -1,3 +1,8 @@
+BODY {
+	background-color: #6997d3;
+	font-family: cursive;
+}
+
 #rootPanel {
 	width: 75em;
 	margin: 0 auto;
