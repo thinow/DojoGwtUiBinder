@@ -8,12 +8,12 @@
 			padding: 1em;
 		}
 		
-		.leftColumn {
+		.column.left {
 			float: left;
 			background-color: #05326d;
 		}
 		
-		.rightColumn {
+		.column.right {
 			float: right;
 			width: 55em;
 			background-color: #fff;
@@ -25,7 +25,7 @@
 			color: #05326d;
 		}
 		
-		.ratePanel {
+		.rate {
 			float: right;
 			padding: 0.8em;
 			text-align: center;
@@ -33,7 +33,8 @@
 			color: #fff;
 		}
 		
-		.rateTitle {
+		.rate .line {
+			font-size: 22px;
 			font-weight: bold;
 		}
 		
@@ -45,18 +46,18 @@
 	<g:HTMLPanel>
 
 		<!-- Colonne de gauche -->
-		<div class="{style.column} {style.leftColumn}">
+		<div class="{style.column} {style.left}">
 			<g:Image ui:field="picture" />
 		</div>
 
 		<!-- Corps de la vue -->
-		<div class="{style.column} {style.rightColumn}">
+		<div class="{style.column} {style.right}">
 
 			<g:Label ui:field="name" addStyleNames="{style.name}" />
 
-			<div class="{style.ratePanel}">
-				<span class="{style.rateTitle}">Note moyenne :</span>
-				<r:RateLine ui:field="rateLine" />
+			<div class="{style.rate}">
+				<span>Note moyenne :</span>
+				<r:RateLine ui:field="rateLine" addStyleNames="{style.line}" />
 			</div>
 
 			<g:DisclosurePanel open="true" addStyleNames="{style.clear}">
