@@ -16,7 +16,29 @@
 		.rightColumn {
 			float: right;
 			width: 55em;
-			background-color: #ffffff;
+			background-color: #fff;
+		}
+		
+		.name {
+			float: left;
+			font-size: 30px;
+			color: #05326d;
+		}
+		
+		.ratePanel {
+			float: right;
+			padding: 0.8em;
+			text-align: center;
+			background-color: #6997d3;
+			color: #fff;
+		}
+		
+		.rateTitle {
+			font-weight: bold;
+		}
+		
+		.clear {
+			clear: both;
 		}
 	</ui:style>
 
@@ -30,14 +52,14 @@
 		<!-- Corps de la vue -->
 		<div class="{style.column} {style.rightColumn}">
 
-			<g:Label ui:field="name" />
+			<g:Label ui:field="name" addStyleNames="{style.name}" />
 
-			<div>
-				<span>Note moyenne :</span>
+			<div class="{style.ratePanel}">
+				<span class="{style.rateTitle}">Note moyenne :</span>
 				<r:RateLine ui:field="rateLine" />
 			</div>
 
-			<g:DisclosurePanel open="true">
+			<g:DisclosurePanel open="true" addStyleNames="{style.clear}">
 				<g:header>Description</g:header>
 				<g:Label ui:field="description" />
 			</g:DisclosurePanel>
