@@ -8,6 +8,10 @@ BODY {
 	padding-top: 1em;
 }
 
+.clear {
+	clear: both;
+}
+
 /* *************
     ProductView
    ************* */
@@ -34,4 +38,24 @@ BODY {
 
 .productView IMG {
 	border-radius: 0.75em;
+}
+
+.productView .name {
+	float: left;
+	font-size: 30px;
+	color: #05326d;
+}
+
+.productView .rate {
+	float: right;
+	padding: 0.8em;
+	text-align: center;
+	background-color: #6997d3;
+	color: #fff;
+	border-radius: 0.75em;
+}
+
+.productView .rateLine DIV {
+	display: inline-block;
+	white-space: pre;
 }

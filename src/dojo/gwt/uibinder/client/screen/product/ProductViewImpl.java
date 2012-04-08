@@ -14,6 +14,14 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class ProductViewImpl extends FlowPanel implements ProductView {
 
+	private static final String STYLE_RATE_LINE = "rateLine";
+
+	private static final String STYLE_CLEAR = "clear";
+
+	private static final String STYLE_RATE = "rate";
+
+	private static final String STYLE_NAME = "name";
+
 	private static final String STYLE_VIEW = "productView";
 
 	private static final String STYLE_RIGHT_COLUMN = "rightColumn";
@@ -75,7 +83,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 		Panel column = new FlowPanel();
 		column.addStyleName(STYLE_RIGHT_COLUMN);
 
-		column.add(name);
+		column.add(newNameBlock());
 		column.add(newRateBlock());
 		column.add(newDescriptionBlock());
 		column.add(newDetailsBlock());
@@ -84,8 +92,16 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 		return column;
 	}
 
+	private Widget newNameBlock() {
+		name.addStyleName(STYLE_NAME);
+
+		return name;
+	}
+
 	private Widget newRateBlock() {
 		FlowPanel block = new FlowPanel();
+		block.addStyleName(STYLE_RATE);
+
 		block.add(new Label("Note moyenne :"));
 		block.add(newRateLineWith(rate));
 
@@ -93,7 +109,10 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 	}
 
 	private Widget newDescriptionBlock() {
-		return newCollapsibleBlockWith("Description", description);
+		Widget block = newCollapsibleBlockWith("Description", description);
+		block.addStyleName(STYLE_CLEAR);
+
+		return block;
 	}
 
 	private Widget newDetailsBlock() {
@@ -189,6 +208,8 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Widget newRateLineWith(NumberLabel<Number> label) {
 		Panel line = new FlowPanel();
+		line.addStyleName(STYLE_RATE_LINE);
+
 		line.add(label);
 		line.add(new Label(RATE_SEPARATOR));
 		line.add(newLabelOfRate(MAX_RATE));
