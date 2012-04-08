@@ -1,17 +1,27 @@
 package dojo.gwt.uibinder.client.screen.product;
 
+import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.IsWidget;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 import dojo.gwt.uibinder.client.model.Comment;
 import dojo.gwt.uibinder.client.model.Product;
 import dojo.gwt.uibinder.client.model.factory.ProductFactory;
+import dojo.gwt.uibinder.client.screen.product.ProductView.Presenter;
 
-public class ProductPresenter {
+public class ProductPresenter implements Presenter {
 
 	private ProductView view = new ProductViewImpl();
 
 	public ProductPresenter() {
+		bindView();
 		displayProduct(ProductFactory.aGreatOne());
+	}
+
+	private void bindView() {
+		view.setPresenter(this);
 	}
 
 	private void displayProduct(Product product) {
@@ -50,6 +60,18 @@ public class ProductPresenter {
 
 	public IsWidget getView() {
 		return view;
+	}
+
+	@Override
+	public void onAddCommentAsked() {
+		Widget widget = new Label("Clic détecté !");
+		displayDialogBoxContaining(widget);
+	}
+
+	private void displayDialogBoxContaining(Widget widget) {
+		PopupPanel box = new DialogBox(true, true);
+		box.add(widget);
+		box.center();
 	}
 
 }

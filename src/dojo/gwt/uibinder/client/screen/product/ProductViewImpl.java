@@ -44,6 +44,8 @@ public class ProductViewImpl extends Composite implements ProductView {
 	@UiField
 	Panel commentsPanel;
 
+	private Presenter presenter;
+
 	public ProductViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
@@ -105,7 +107,12 @@ public class ProductViewImpl extends Composite implements ProductView {
 
 	@UiHandler("addComment")
 	void onAddCommentClick(ClickEvent event) {
-		// TODO
+		presenter.onAddCommentAsked();
+	}
+
+	@Override
+	public void setPresenter(Presenter presenter) {
+		this.presenter = presenter;
 	}
 
 }

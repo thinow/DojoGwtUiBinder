@@ -9,6 +9,12 @@ public interface ProductView extends IsWidget {
 
 	static final double MAX_RATE = 10.0;
 
+	public interface Presenter {
+
+		void onAddCommentAsked();
+
+	}
+
 	void displayPicture(ImageResource picture);
 
 	HasText getAlcoholField();
@@ -26,5 +32,7 @@ public interface ProductView extends IsWidget {
 	HasText getTypeField();
 
 	void addComment(String authorName, String text, double rate);
+
+	void setPresenter(Presenter presenter);
 
 }
