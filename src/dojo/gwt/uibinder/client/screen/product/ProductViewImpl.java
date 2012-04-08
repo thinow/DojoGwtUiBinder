@@ -7,6 +7,7 @@ import com.google.gwt.user.client.ui.DisclosurePanel;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.NumberLabel;
 import com.google.gwt.user.client.ui.Panel;
@@ -14,18 +15,19 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class ProductViewImpl extends FlowPanel implements ProductView {
 
-	private static final String STYLE_RATE_LINE = "rateLine";
-
-	private static final String STYLE_CLEAR = "clear";
-
-	private static final String STYLE_RATE = "rate";
-
-	private static final String STYLE_NAME = "name";
-
 	private static final String STYLE_VIEW = "productView";
 
 	private static final String STYLE_RIGHT_COLUMN = "rightColumn";
 	private static final String STYLE_LEFT_COLUMN = "leftColumn";
+
+	private static final String STYLE_NAME = "name";
+	private static final String STYLE_RATE = "rate";
+
+	private static final String STYLE_DETAILS = "details";
+
+	private static final String STYLE_RATE_LINE = "rateLine";
+
+	private static final String STYLE_CLEAR = "clear";
 
 	private static final String RATE_SEPARATOR = " / ";
 
@@ -117,6 +119,8 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Widget newDetailsBlock() {
 		FlowPanel group = new FlowPanel();
+		group.addStyleName(STYLE_DETAILS);
+
 		group.add(newDetailLineWith("Couleur", color));
 		group.add(newDetailLineWith("Degré d'alcool", alcohol));
 		group.add(newDetailLineWith("Type", type));
@@ -127,7 +131,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Widget newDetailLineWith(String label, Widget field) {
 		Panel line = new FlowPanel();
-		line.add(new Label(label));
+		line.add(new InlineLabel(label));
 		line.add(field);
 
 		return line;

@@ -77,3 +77,13 @@ BODY {
 .productView .gwt-DisclosurePanel .content {
 	border-left: none;
 }
+
+.productView .details DIV>SPAN {
+	display: inline-block;
+	width: 7em;
+}
+
+.productView .details .gwt-Label {
+	display: inline;
+	font-weight: bold;
+}
