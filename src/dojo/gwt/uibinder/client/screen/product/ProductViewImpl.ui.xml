@@ -125,7 +125,10 @@
 
 			<g:DisclosurePanel open="true">
 				<g:header>Commentaires</g:header>
-				<g:FlowPanel ui:field="commentsPanel" />
+				<g:FlowPanel>
+					<g:FlowPanel ui:field="commentsPanel" />
+					<g:PushButton ui:field="addComment" text="Ajouter un commentaire" />
+				</g:FlowPanel>
 			</g:DisclosurePanel>
 
 		</div>
