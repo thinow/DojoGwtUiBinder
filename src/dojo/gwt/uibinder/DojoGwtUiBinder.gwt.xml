@@ -3,6 +3,7 @@
 
 	<!-- Modules GWT -->
 	<inherits name="com.google.gwt.user.User" />
+	<inherits name="com.google.gwt.i18n.I18N"/>
 
 	<!-- Thème appliqué -->
 	<inherits name="com.google.gwt.user.theme.clean.Clean" />
