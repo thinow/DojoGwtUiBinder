@@ -25,6 +25,9 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private static final String STYLE_DETAILS = "details";
 
+	private static final String STYLE_COMMENT = "comment";
+	private static final String STYLE_AUTHOR = "author";
+
 	private static final String STYLE_RATE_LINE = "rateLine";
 
 	private static final String STYLE_CLEAR = "clear";
@@ -198,11 +201,20 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 			double rate) {
 
 		FlowPanel block = new FlowPanel();
-		block.add(new Label(authorName));
+		block.addStyleName(STYLE_COMMENT);
+
+		block.add(newAuthorNameField(authorName));
 		block.add(newRateLineOf(rate));
 		block.add(new Label(text));
 
 		return block;
+	}
+
+	private Widget newAuthorNameField(String authorName) {
+		Label authorNameField = new Label(authorName);
+		authorNameField.addStyleName(STYLE_AUTHOR);
+
+		return authorNameField;
 	}
 
 	private Widget newRateLineOf(double value) {

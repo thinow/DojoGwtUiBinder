@@ -87,3 +87,20 @@ BODY {
 	display: inline;
 	font-weight: bold;
 }
+
+.productView .comment {
+	margin-bottom: 1.6em;
+}
+
+.productView .comment .rateLine {
+	display: inline-block;
+	width: 4em;
+	text-align: right;
+	color: #555;
+}
+
+.productView .author {
+	display: inline-block;
+	width: 5em;
+	font-weight: bold;
+}
