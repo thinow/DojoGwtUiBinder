@@ -3,6 +3,9 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:dojo.gwt.uibinder.client.screen.product.rate">
 
 	<ui:style>
+		@def lightColor #fff;
+		@def mediumColor #6997d3;
+		@def darkColor #05326d;
 		.column {
 			height: 38em;
 			padding: 1em;
@@ -10,27 +13,27 @@
 		
 		.column.left {
 			float: left;
-			background-color: #05326d;
+			background-color: darkColor;
 		}
 		
 		.column.right {
 			float: right;
 			width: 55em;
-			background-color: #fff;
+			background-color: lightColor;
 		}
 		
 		.name {
 			float: left;
 			font-size: 30px;
-			color: #05326d;
+			color: darkColor;
 		}
 		
 		.rate {
 			float: right;
 			padding: 0.8em;
 			text-align: center;
-			background-color: #6997d3;
-			color: #fff;
+			background-color: mediumColor;
+			color: lightColor;
 		}
 		
 		.rate .line {
@@ -40,6 +43,24 @@
 		
 		.clear {
 			clear: both;
+		}
+		
+		@external gwt-DisclosurePanel, header, content;
+		.gwt-DisclosurePanel {
+			padding: 0.8em 0;
+			width: 100%;
+		}
+		
+		.gwt-DisclosurePanel .header {
+			background-color: mediumColor;
+		}
+		
+		.gwt-DisclosurePanel .header TD {
+			color: lightColor;
+		}
+		
+		.gwt-DisclosurePanel .content {
+			border-left: none;
 		}
 	</ui:style>
 
