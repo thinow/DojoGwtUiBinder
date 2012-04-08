@@ -62,6 +62,17 @@
 		.gwt-DisclosurePanel .content {
 			border-left: none;
 		}
+		
+		.details DIV>SPAN {
+			display: inline-block;
+			width: 7em;
+		}
+		
+		@external gwt-Label;
+		.details .gwt-Label {
+			display: inline;
+			font-weight: bold;
+		}
 	</ui:style>
 
 	<g:HTMLPanel>
@@ -88,15 +99,23 @@
 
 			<g:DisclosurePanel open="true">
 				<g:header>Détails</g:header>
-				<g:HTMLPanel>
-					<span>Couleur</span>
-					<g:Label ui:field="color" />
-					<span>Degré d'alcool</span>
-					<g:Label ui:field="alcohol" />
-					<span>Type</span>
-					<g:Label ui:field="type" />
-					<span>Brasserie</span>
-					<g:Label ui:field="brewery" />
+				<g:HTMLPanel addStyleNames="{style.details}">
+					<div>
+						<span>Couleur</span>
+						<g:Label ui:field="color" />
+					</div>
+					<div>
+						<span>Degré d'alcool</span>
+						<g:Label ui:field="alcohol" />
+					</div>
+					<div>
+						<span>Type</span>
+						<g:Label ui:field="type" />
+					</div>
+					<div>
+						<span>Brasserie</span>
+						<g:Label ui:field="brewery" />
+					</div>
 				</g:HTMLPanel>
 			</g:DisclosurePanel>
 
