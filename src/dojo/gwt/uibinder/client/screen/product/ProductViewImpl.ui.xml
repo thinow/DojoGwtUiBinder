@@ -6,9 +6,11 @@
 		@def lightColor #fff;
 		@def mediumColor #6997d3;
 		@def darkColor #05326d;
+		@def borderRadius 0.75em;
 		.column {
 			height: 38em;
 			padding: 1em;
+			border-radius: borderRadius;
 		}
 		
 		.column.left {
@@ -20,6 +22,10 @@
 			float: right;
 			width: 55em;
 			background-color: lightColor;
+		}
+		
+		.left IMG {
+			border-radius: borderRadius;
 		}
 		
 		.name {
@@ -34,6 +40,7 @@
 			text-align: center;
 			background-color: mediumColor;
 			color: lightColor;
+			border-radius: borderRadius;
 		}
 		
 		.rate .line {
@@ -53,6 +60,7 @@
 		
 		.gwt-DisclosurePanel .header {
 			background-color: mediumColor;
+			border-radius: borderRadius;
 		}
 		
 		.gwt-DisclosurePanel .header TD {
