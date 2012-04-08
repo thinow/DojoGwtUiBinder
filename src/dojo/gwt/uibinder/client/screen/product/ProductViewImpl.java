@@ -1,9 +1,11 @@
 package dojo.gwt.uibinder.client.screen.product;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.TakesValue;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
@@ -99,6 +101,11 @@ public class ProductViewImpl extends Composite implements ProductView {
 		comment.getText().setText(text);
 
 		return comment;
+	}
+
+	@UiHandler("addComment")
+	void onAddCommentClick(ClickEvent event) {
+		// TODO
 	}
 
 }
