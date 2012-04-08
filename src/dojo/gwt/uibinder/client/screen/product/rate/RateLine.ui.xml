@@ -2,7 +2,14 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
-	<g:HTMLPanel>
+	<ui:style>
+		@external my-RateLine;
+		.my-RateLine {
+			
+		}
+	</ui:style>
+
+	<g:HTMLPanel addStyleNames="{style.my-RateLine}">
 		<g:NumberLabel ui:field="rate" customFormat="0.#" />
 		<span>/</span>
 		<g:NumberLabel ui:field="maxRate" customFormat="0.#" />

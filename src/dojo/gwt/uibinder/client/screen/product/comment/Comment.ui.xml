@@ -2,8 +2,28 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:dojo.gwt.uibinder.client.screen.product.rate">
 
-	<g:HTMLPanel>
-		<g:Label ui:field="authorName" />
+	<ui:style>
+		@external my-Comment, my-RateLine;
+		.my-Comment {
+			margin-bottom: 1.6em;
+		}
+		
+		.my-Comment .my-RateLine {
+			display: inline-block;
+			width: 4em;
+			text-align: right;
+			color: #555;
+		}
+		
+		.author {
+			display: inline-block;
+			width: 5em;
+			font-weight: bold;
+		}
+	</ui:style>
+
+	<g:HTMLPanel addStyleNames="{style.my-Comment}">
+		<g:Label ui:field="authorName" addStyleNames="{style.author}" />
 		<r:RateLine ui:field="rateLine" />
 		<g:Label ui:field="text" />
 	</g:HTMLPanel>
