@@ -2,6 +2,9 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:dojo.gwt.uibinder.client.screen.product.rate">
 
+	<ui:with field="messages"
+		type="dojo.gwt.uibinder.client.resources.i18n.Messages" />
+
 	<ui:style src="../../resources/constants.css">
 		.column {
 			height: 38em;
@@ -57,6 +60,7 @@
 		.gwt-DisclosurePanel .header {
 			background-color: mediumColor;
 			border-radius: borderRadius;
+			padding-left: 1em;
 		}
 		
 		.gwt-DisclosurePanel .header TD {
@@ -92,39 +96,45 @@
 			<g:Label ui:field="name" addStyleNames="{style.name}" />
 
 			<div class="{style.rate}">
-				<span>Note moyenne :</span>
+				<g:InlineLabel text="{messages.rateTitle}" />
 				<r:RateLine ui:field="rateLine" addStyleNames="{style.line}" />
 			</div>
 
 			<g:DisclosurePanel open="true" addStyleNames="{style.clear}">
-				<g:header>Description</g:header>
+				<g:customHeader>
+					<g:InlineLabel text="{messages.descriptionTitle}" />
+				</g:customHeader>
 				<g:Label ui:field="description" />
 			</g:DisclosurePanel>
 
 			<g:DisclosurePanel open="true">
-				<g:header>Détails</g:header>
+				<g:customHeader>
+					<g:InlineLabel text="{messages.detailsTitle}" />
+				</g:customHeader>
 				<g:HTMLPanel addStyleNames="{style.details}">
 					<div>
-						<span>Couleur</span>
+						<g:InlineLabel text="{messages.color}" />
 						<g:Label ui:field="color" />
 					</div>
 					<div>
-						<span>Degré d'alcool</span>
+						<g:InlineLabel text="{messages.alcohol}" />
 						<g:Label ui:field="alcohol" />
 					</div>
 					<div>
-						<span>Type</span>
+						<g:InlineLabel text="{messages.type}" />
 						<g:Label ui:field="type" />
 					</div>
 					<div>
-						<span>Brasserie</span>
+						<g:InlineLabel text="{messages.brewerie}" />
 						<g:Label ui:field="brewery" />
 					</div>
 				</g:HTMLPanel>
 			</g:DisclosurePanel>
 
 			<g:DisclosurePanel open="true">
-				<g:header>Commentaires</g:header>
+				<g:customHeader>
+					<g:InlineLabel text="{messages.commentsTitle}" />
+				</g:customHeader>
 				<g:FlowPanel ui:field="commentsPanel" />
 			</g:DisclosurePanel>
 
