@@ -14,6 +14,11 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class ProductViewImpl extends FlowPanel implements ProductView {
 
+	private static final String STYLE_VIEW = "productView";
+
+	private static final String STYLE_RIGHT_COLUMN = "rightColumn";
+	private static final String STYLE_LEFT_COLUMN = "leftColumn";
+
 	private static final String RATE_SEPARATOR = " / ";
 
 	private static final String RATE_FORMAT = "0.#";
@@ -37,6 +42,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private void constructStructure() {
 		initializeFields();
+		addStyleName(STYLE_VIEW);
 		add(newFirstColumn());
 		add(newSecondColumn());
 	}
@@ -58,6 +64,8 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Panel newFirstColumn() {
 		Panel column = new FlowPanel();
+		column.addStyleName(STYLE_LEFT_COLUMN);
+
 		column.add(picture);
 
 		return column;
@@ -65,6 +73,8 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Panel newSecondColumn() {
 		Panel column = new FlowPanel();
+		column.addStyleName(STYLE_RIGHT_COLUMN);
+
 		column.add(name);
 		column.add(newRateBlock());
 		column.add(newDescriptionBlock());

@@ -1,5 +1,37 @@
+BODY {
+	background-color: #6997d3;
+}
+
 #rootPanel {
 	width: 75em;
 	margin: 0 auto;
 	padding-top: 1em;
+}
+
+/* *************
+    ProductView
+   ************* */
+.productView {
+	
+}
+
+.productView .leftColumn {
+	height: 38em;
+	padding: 1em;
+	border-radius: 0.75em;
+	float: left;
+	background-color: #05326d;
+}
+
+.productView .rightColumn {
+	height: 38em;
+	padding: 1em;
+	border-radius: 0.75em;
+	float: right;
+	width: 55em;
+	background-color: #fff;
+}
+
+.productView IMG {
+	border-radius: 0.75em;
 }
