@@ -14,5 +14,8 @@
 	<!-- Package(s) dont le code sera retranscrit en JavaScript -->
 	<source path="client" />
 	<source path="shared" />
+	
+	<!-- Langues gérées par l'application. -->
+	<extend-property name="locale" values="en" />
 
 </module>
