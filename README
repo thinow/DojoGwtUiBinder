@@ -3,3 +3,12 @@ Dojo GWT & UiBinder
 
 Cette application est un support au dojo "GWT & UiBinder". Il s'agit d'un projet GWT contenant différents exemples d'implémentation de vues et widget.
 
+
+Pré-requis à l'installation :
+ - Eclipse version récente
+ - Plugin GWT (v2.4 minimum)
+
+
+Installation :
+Il suffit d'importer les sources directement depuis eclipse.
+
