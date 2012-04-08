@@ -2,11 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:dojo.gwt.uibinder.client.screen.product.rate">
 
-	<ui:style>
-		@def lightColor #fff;
-		@def mediumColor #6997d3;
-		@def darkColor #05326d;
-		@def borderRadius 0.75em;
+	<ui:style src="../../resources/constants.css">
 		.column {
 			height: 38em;
 			padding: 1em;
