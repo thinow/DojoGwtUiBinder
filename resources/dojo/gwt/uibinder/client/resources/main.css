@@ -59,3 +59,21 @@ BODY {
 	display: inline-block;
 	white-space: pre;
 }
+
+.productView .gwt-DisclosurePanel {
+	padding: 0.8em 0;
+	width: 100%;
+}
+
+.productView .gwt-DisclosurePanel .header {
+	background-color: #6997d3;
+	border-radius: 0.75em;
+}
+
+.productView .gwt-DisclosurePanel .header TD {
+	color: #fff;
+}
+
+.productView .gwt-DisclosurePanel .content {
+	border-left: none;
+}
