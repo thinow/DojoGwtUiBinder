@@ -15,22 +15,18 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class ProductViewImpl extends FlowPanel implements ProductView {
 
-	private static final String STYLE_VIEW = "productView";
-
-	private static final String STYLE_RIGHT_COLUMN = "rightColumn";
-	private static final String STYLE_LEFT_COLUMN = "leftColumn";
-
-	private static final String STYLE_NAME = "name";
-	private static final String STYLE_RATE = "rate";
-
-	private static final String STYLE_DETAILS = "details";
-
-	private static final String STYLE_COMMENT = "comment";
-	private static final String STYLE_AUTHOR = "author";
-
-	private static final String STYLE_RATE_LINE = "rateLine";
-
-	private static final String STYLE_CLEAR = "clear";
+	interface Style {
+		static final String VIEW = "productView";
+		static final String RIGHT_COLUMN = "rightColumn";
+		static final String LEFT_COLUMN = "leftColumn";
+		static final String NAME = "name";
+		static final String RATE = "rate";
+		static final String DETAILS = "details";
+		static final String COMMENT = "comment";
+		static final String AUTHOR = "author";
+		static final String RATE_LINE = "rateLine";
+		static final String CLEAR = "clear";
+	}
 
 	private static final String RATE_SEPARATOR = " / ";
 
@@ -55,7 +51,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private void constructStructure() {
 		initializeFields();
-		addStyleName(STYLE_VIEW);
+		addStyleName(Style.VIEW);
 		add(newFirstColumn());
 		add(newSecondColumn());
 	}
@@ -77,7 +73,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Panel newFirstColumn() {
 		Panel column = new FlowPanel();
-		column.addStyleName(STYLE_LEFT_COLUMN);
+		column.addStyleName(Style.LEFT_COLUMN);
 
 		column.add(picture);
 
@@ -86,7 +82,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Panel newSecondColumn() {
 		Panel column = new FlowPanel();
-		column.addStyleName(STYLE_RIGHT_COLUMN);
+		column.addStyleName(Style.RIGHT_COLUMN);
 
 		column.add(newNameBlock());
 		column.add(newRateBlock());
@@ -98,14 +94,14 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 	}
 
 	private Widget newNameBlock() {
-		name.addStyleName(STYLE_NAME);
+		name.addStyleName(Style.NAME);
 
 		return name;
 	}
 
 	private Widget newRateBlock() {
 		FlowPanel block = new FlowPanel();
-		block.addStyleName(STYLE_RATE);
+		block.addStyleName(Style.RATE);
 
 		block.add(new Label("Note moyenne :"));
 		block.add(newRateLineWith(rate));
@@ -115,14 +111,14 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Widget newDescriptionBlock() {
 		Widget block = newCollapsibleBlockWith("Description", description);
-		block.addStyleName(STYLE_CLEAR);
+		block.addStyleName(Style.CLEAR);
 
 		return block;
 	}
 
 	private Widget newDetailsBlock() {
 		FlowPanel group = new FlowPanel();
-		group.addStyleName(STYLE_DETAILS);
+		group.addStyleName(Style.DETAILS);
 
 		group.add(newDetailLineWith("Couleur", color));
 		group.add(newDetailLineWith("Degré d'alcool", alcohol));
@@ -201,7 +197,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 			double rate) {
 
 		FlowPanel block = new FlowPanel();
-		block.addStyleName(STYLE_COMMENT);
+		block.addStyleName(Style.COMMENT);
 
 		block.add(newAuthorNameField(authorName));
 		block.add(newRateLineOf(rate));
@@ -212,7 +208,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Widget newAuthorNameField(String authorName) {
 		Label authorNameField = new Label(authorName);
-		authorNameField.addStyleName(STYLE_AUTHOR);
+		authorNameField.addStyleName(Style.AUTHOR);
 
 		return authorNameField;
 	}
@@ -224,7 +220,7 @@ public class ProductViewImpl extends FlowPanel implements ProductView {
 
 	private Widget newRateLineWith(NumberLabel<Number> label) {
 		Panel line = new FlowPanel();
-		line.addStyleName(STYLE_RATE_LINE);
+		line.addStyleName(Style.RATE_LINE);
 
 		line.add(label);
 		line.add(new Label(RATE_SEPARATOR));
